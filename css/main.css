@@ -22,6 +22,10 @@ body {
     padding: 100px 0;
 }
 
+/* * {
+    outline: 1px solid #333;
+} */
+
 /* 세팅 css */
 
 .header {
@@ -223,16 +227,31 @@ body {
     display: none;
 }
 
+.mainVisual .icon {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+
+    color: #f9f9f9;
+    font-size: 20px;
+}
+
 /* mainVisual */
 
 .main_con {
     display: flex;
+    gap: 30px;
     flex-wrap: wrap;
+
 }
 
 .main_con .con {
     flex: 1 1 30%;
     text-align: center;
+    border: 1px solid #ddd;
+    padding: 40px;
 }
 
 .main_con .con img {
@@ -241,12 +260,16 @@ body {
 
 .main_con .con .top {
     font-size: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .main_con .con .midle,
 .bottom {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+.main_con .con .bottom {
+    height: 50px;
 }
 
 .main_con .con .img {
@@ -265,17 +288,138 @@ body {
     border-radius: 5px;
 }
 
-.main_con .con .btn01 {
-    margin-bottom: 20px;
-}
-
 .main_con .con .btn01 a {
     border: 1px solid #333;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .main_con .con .btn02 a {
     background: #333;
     color: #fff;
+}
 
+/* mainContent */
+
+.main_banner {
+    display: flex;
+}
+
+.main_banner .m_b {
+    position: relative;
+    flex: 1;
+    padding: 300px 100px;
+}
+
+.main_banner .m_b::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: 0.45s;
+
+}
+
+.main_banner .m_b:hover::before {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.main_banner .m_b .top {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #f9f9f9;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: 0.45s;
+
+}
+
+.main_banner .m_b:hover .top {
+    opacity: 1;
+}
+
+.main_banner .m_b .bottom {
+    position: relative;
+    text-align: center;
+    color: #f9f9f9;
+    margin-bottom: 20px;
+    line-height: 1.625;
+    opacity: 0;
+    transition: 0.45s;
+
+}
+
+.main_banner .m_b:hover .bottom {
+    opacity: 1;
+}
+
+.main_banner .m_b01 {
+    background: url(../img/banner01-gt.jpg) no-repeat center center/cover;
+}
+
+.main_banner .m_b02 {
+    background: url(../img/banner02-modena.jpg) no-repeat center center/cover;
+}
+
+.main_banner .m_b03 {
+    background: url(../img/banner03-trofeo.jpg) no-repeat center center/cover;
+}
+
+/* mainBanner */
+
+.main_bc {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+}
+
+.main_bc .con_left {
+    grid-column: 1/5;
+}
+
+.main_bc .con_left img {
+    max-width: 100%;
+}
+
+.main_bc .con_right {
+    grid-column: 5/7;
+    padding: 60px 30px;
+    border: 2px solid #555;
+    line-height: 1.625;
+}
+
+.main_bc .con_right .tit {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.main_bc .con_right .txt {
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+.main_bc .con_bottom .name {
+    position: relative;
+    font-size: 18px;
+}
+
+.main_bc .con_bottom a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #444444;
+}
+
+.main_bc .con_bottom .place,
+.num {
+    font-size: 15px;
 }
